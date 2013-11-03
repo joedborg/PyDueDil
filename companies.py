@@ -41,7 +41,7 @@ class Companies(Duedil):
         query = self.__quote__(query)
         response = self.__get__("query=%s" % (query))["data"]
         for item in response:
-            yield Company(item['idx'])
+            yield Company(self._key, item['id'])
 
 class Company(Duedil):
     """
