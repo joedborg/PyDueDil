@@ -1,12 +1,11 @@
-import json, urllib2
+import os, json, urllib2
 
 class Duedil(object):
     """
     Proveide the base class for the Duedil API.
     """
-    def __init__(self, key):
-        assert type(key) == str
-        self._key = key
+    def __init__(self, key=None):
+        self._key = self.__key__(key)
         self._url = "http://api.duedil.com/v2/"
 
     def __get__(self, params=""):
@@ -15,3 +14,14 @@ class Duedil(object):
 
     def __quote__(self, s):
         return urllib2.quote(s)
+
+    def __key__(self, key):
+        if key:
+            with open("%s/.pyduedil_key" % (os.path.expanduser("~/")), "w") as f:
+                f.write(key)
+                return key
+        try:
+            with open("%s/.pyduedil_key" % (os.path.expanduser("~/"))) as f:
+                return f.read()
+        except IOError:
+            raise RuntimeError("No key specified and no key file found")

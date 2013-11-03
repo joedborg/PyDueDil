@@ -33,7 +33,7 @@ class Companies(Duedil):
     """
     Extend Duedil for companies.
     """
-    def __init__(self, key):
+    def __init__(self, key=None):
          Duedil.__init__(self, key)
          self._url += "search/companies.json?"
 
@@ -41,13 +41,13 @@ class Companies(Duedil):
         query = self.__quote__(query)
         response = self.__get__("query=%s" % (query))["data"]
         for item in response:
-            yield Company(self._key, item['id'])
+            yield Company(item['id'], key=self._key)
 
 class Company(Duedil):
     """
     Extend Duedil for a company.
     """
-    def __init__(self, key, id):
+    def __init__(self, id, key=None):
         Duedil.__init__(self, key)
         self._id = id
         self._url += "company/%s.json?" % (self._id)

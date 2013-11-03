@@ -8,6 +8,8 @@ To install, clone to the site-packages directory, or any other in the PYTHONPATH
 
 Usage
 -----
+When an API_KEY is specified, it is saved to `~/.pyduedil_key`, so isn't required after.  It will be overwritten if specified again.
+
 To search for companies, returning a list of dictionaries...
 ```python
 >>> import PyDueDil
@@ -39,7 +41,7 @@ To search for companies, returning a list of dictionaries...
 
 Then use the id to create a company instance...
 ```python
->>> google = PyDueDil.Company(API_KEY, '04533788')
+>>> google = PyDueDil.Company('04533788', key=API_KEY)
 ```
 ...this creates an object with attributes...
 ```python

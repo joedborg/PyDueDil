@@ -4,7 +4,7 @@ class Directors(Duedil):
     """
     Extend Duedil for directors.
     """
-    def __init__(self, key):
+    def __init__(self, key=None):
         Duedil.__init__(self, key)
         self._url += "search/directors.json?"
 
@@ -16,7 +16,7 @@ class Director(Duedil):
     """
     Extend Duedil for a director.
     """
-    def __init__(self, key, id):
+    def __init__(self, id, key=None):
         Duedil.__init__(self, key)
         self._url += "director/%s.json?" % (id)
         get = self.__get__("field=get_all")
