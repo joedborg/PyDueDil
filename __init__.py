@@ -1,5 +1,5 @@
-__author__ = 'joe'
+__author__ = 'Joe Borg'
 
-from duodil import *
+from duedil import *
 from companies import *
 from directors import *

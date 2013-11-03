@@ -39,7 +39,9 @@ class Companies(Duedil):
 
     def search(self, query):
         query = self.__quote__(query)
-        return self.__get__("query=%s" % (query))["data"]
+        response = self.__get__("query=%s" % (query))["data"]
+        for item in response:
+            yield Company(item['idx'])
 
 class Company(Duedil):
     """

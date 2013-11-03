@@ -10,9 +10,9 @@ Usage
 -----
 To search for companies, returning a list of dictionaries...
 ```python
->>> import pyduedil
+>>> import PyDueDil
 >>> API_KEY = 'aaaaaaaaaaaaaaaaaaaaaaaa'
->>> pyduedil.Companies(API_KEY).search('Google')
+>>> PyDueDil.Companies(API_KEY).search('Google')
 
 {u'data': [{u'id': u'04533788',
    u'locale': u'uk',
@@ -39,7 +39,7 @@ To search for companies, returning a list of dictionaries...
 
 Then use the id to create a company instance...
 ```python
->>> google = pyduedil.Company(API_KEY, '04533788')
+>>> google = PyDueDil.Company(API_KEY, '04533788')
 ```
 ...this creates an object with attributes...
 ```python
@@ -60,7 +60,7 @@ u'Private limited with share capital'
 ```
 ...or, to get a dictionary, use...
 ```python
->>> google = pyduedil.Company(API_KEY, '04533788').__dict__
+>>> google = PyDueDil.Company(API_KEY, '04533788').__dict__
 
 {'_id': '04533788',
  '_key': 'mfvzb5fbs452g2tvdd3gdgf2',
