@@ -1,23 +1,23 @@
-from duodil import Duodil
+from duedil import Duedil
 
-class Directors(Duodil):
+class Directors(Duedil):
     """
-    Extend Duodil for directors.
+    Extend Duedil for directors.
     """
     def __init__(self, key):
-        Duodil.__init__(self, key)
+        Duedil.__init__(self, key)
         self._url += "search/directors.json?"
 
     def search(self, query):
         query = self.__quote__(query)
         return self.__get__("query=%s" % (query))["data"]
 
-class Director(Duodil):
+class Director(Duedil):
     """
-    Extend Duidil for a director.
+    Extend Duedil for a director.
     """
     def __init__(self, key, id):
-        Duodil.__init__(self, key)
+        Duedil.__init__(self, key)
         self._url += "director/%s.json?" % (id)
         get = self.__get__("field=get_all")
         for key in get.iterkeys():

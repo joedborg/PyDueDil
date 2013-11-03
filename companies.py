@@ -1,4 +1,4 @@
-from duodil import Duodil
+from duedil import Duedil
 
 _company_status_lookup = {
     "L": u"Live",
@@ -29,24 +29,24 @@ _liquidation_status_lookup = {
     "O": u"Struck off"
 }
 
-class Companies(Duodil):
+class Companies(Duedil):
     """
-    Extend Duodil for companies.
+    Extend Duedil for companies.
     """
     def __init__(self, key):
-         Duodil.__init__(self, key)
+         Duedil.__init__(self, key)
          self._url += "search/companies.json?"
 
     def search(self, query):
         query = self.__quote__(query)
         return self.__get__("query=%s" % (query))["data"]
 
-class Company(Duodil):
+class Company(Duedil):
     """
-    Extend Duodil for a company.
+    Extend Duedil for a company.
     """
     def __init__(self, key, id):
-        Duodil.__init__(self, key)
+        Duedil.__init__(self, key)
         self._id = id
         self._url += "company/%s.json?" % (self._id)
         get = self.__get__("fields=get_all")
