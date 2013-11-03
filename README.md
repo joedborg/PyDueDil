@@ -2,6 +2,10 @@ PyDueDil
 ========
 A Python bind to the DueDil API
 
+Installation
+------------
+To install, clone to the site-packages directory, or any other in the PYTHONPATH.
+
 Usage
 -----
 To search for companies, returning a list of dictionaries...
