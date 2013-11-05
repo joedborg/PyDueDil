@@ -10,33 +10,13 @@ Usage
 -----
 When an API_KEY is specified, it is saved to `~/.pyduedil_key`, so isn't required after.  It will be overwritten if specified again.
 
-To search for companies, returning a list of dictionaries...
+To search for companies, returning a generator of Company instances...
 ```python
 >>> import PyDueDil
 >>> API_KEY = 'aaaaaaaaaaaaaaaaaaaaaaaa'
 >>> PyDueDil.Companies(API_KEY).search('Google')
 
-{u'data': [{u'id': u'04533788',
-   u'locale': u'uk',
-   u'name': u'Google Limited',
-   u'uri': u'http://api.duedil.com/v2/company/04533788'},
-  {u'id': u'05220885',
-   u'locale': u'uk',
-   u'name': u'Google Limited',
-   u'uri': u'http://api.duedil.com/v2/company/05220885'},
-  {u'id': u'06770815',
-   u'locale': u'uk',
-   u'name': u'Google Limited',
-   u'uri': u'http://api.duedil.com/v2/company/06770815'},
-  {u'id': u'08291317',
-   u'locale': u'uk',
-   u'name': u'Googled Limited',
-   u'uri': u'http://api.duedil.com/v2/company/08291317'},
-  {u'id': u'03977902',
-   u'locale': u'uk',
-   u'name': u'Google Uk Limited',
-   u'uri': u'http://api.duedil.com/v2/company/03977902'}],
- u'pagination': u'http://api.duedil.com/v2/search/companies?total_results=66&limit=5&offset=5&query=Google'}
+<generator object search at 0x10a8d6870>
 ```
 
 Then use the id to create a company instance...
