@@ -1,4 +1,4 @@
-from duedil import Duedil
+from __init__ import Duedil
 
 _company_status_lookup = {
     "L": u"Live",

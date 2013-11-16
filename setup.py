@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name='PyDueDil',
-    version='0.1.1',
+    version='0.1.2',
     packages=['PyDueDil'],
     url='https://github.com/joedborg/PyDueDil',
     license='GPLv2',
