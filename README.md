@@ -12,16 +12,16 @@ When an API_KEY is specified, it is saved to `~/.pyduedil_key`, so isn't require
 
 To search for companies, returning a generator of Company instances...
 ```python
->>> import PyDueDil
+>>> from PyDueDil.companies import Companies
 >>> API_KEY = 'aaaaaaaaaaaaaaaaaaaaaaaa'
->>> PyDueDil.Companies(API_KEY).search('Google')
+>>> Companies(API_KEY).search('Google')
 
 <generator object search at 0x10a8d6870>
 ```
 
 Then use the id to create a company instance...
 ```python
->>> google = PyDueDil.Company('04533788', key=API_KEY)
+>>> google = Company('04533788', key=API_KEY)
 ```
 ...this creates an object with attributes...
 ```python
@@ -42,7 +42,7 @@ u'Private limited with share capital'
 ```
 ...or, to get a dictionary, use...
 ```python
->>> google = PyDueDil.Company(API_KEY, '04533788').__dict__
+>>> google = Company(API_KEY, '04533788').__dict__
 
 {'_id': '04533788',
  '_key': 'mfvzb5fbs452g2tvdd3gdgf2',
